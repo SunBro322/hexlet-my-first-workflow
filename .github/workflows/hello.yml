@@ -1,8 +1,9 @@
-name: hello
+name: Hello
 on: push
 jobs:
-  my-job:
+  build:
+    # операционная система для работы воркфлоу
     runs-on: ubuntu-latest
-    steps:
-      - name: my-step
-        run: make say-hello
+    steps: # список шагов, которые надо выполнить
+      - uses: actions/checkout@v4
+      - run: make say-hello
